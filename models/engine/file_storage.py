@@ -79,7 +79,7 @@ class FileStorage:
         """Count the number of stored objects"""
         if cls is None:
             return len(self.__objects)
-        return len(filter(
+        return len(tuple(filter(
             lambda x: x.startswith(cls.__name__),
             self.__objects.keys()
-        ))
+        )))
